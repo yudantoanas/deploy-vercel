@@ -16,7 +16,7 @@ def handler1():
     return { "message": "hello" }
 
 @app.get('/secret')
-def handler2(request: Request):
+def handler1(request: Request):
     # retrieve headers content from request
     headers = request.headers
 
