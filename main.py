@@ -12,13 +12,17 @@ data = pd.read_csv('data.csv')
 
 # define url/endpoint
 @app.get('/')
+def handler(): 
+    return { "message": "hello" }
+
+@app.get('/secret')
 def handler(request: Request):
     # retrieve headers content from request
     headers = request.headers
 
     # retrieve User-Agent key in headers
     agent = headers.get("User-Agent")
-    
+
     token = headers.get("Token")
 
     if token == None: # jika key Token tidak ada dalam headers
