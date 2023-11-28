@@ -41,7 +41,7 @@ def handler1(request: Request):
 #     return data.to_dict(orient='records')
 
 @app.get('/home/{user}')
-def handler3(user):
+def handler1(user):
     if user == "yuda":
         return {
             "message": "hello home",
