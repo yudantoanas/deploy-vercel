@@ -12,11 +12,11 @@ app = FastAPI()
 
 # define url/endpoint
 @app.get('/')
-def handler1(): 
+def handler(): 
     return { "message": "hello" }
 
 @app.get('/secret')
-def handler1(request: Request):
+def handler(request: Request):
     # retrieve headers content from request
     headers = request.headers
 
@@ -41,7 +41,7 @@ def handler1(request: Request):
 #     return data.to_dict(orient='records')
 
 @app.get('/home/{user}')
-def handler1(user):
+def handler(user):
     if user == "yuda":
         return {
             "message": "hello home",
