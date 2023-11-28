@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, Request
-import pandas as pd
+# import pandas as pd
 
 # key untuk akses endpoint
 key = "secret123"
@@ -8,7 +8,7 @@ key = "secret123"
 app = FastAPI()
 
 # load data csv
-data = pd.read_csv('data.csv')
+# data = pd.read_csv('data.csv')
 
 # define url/endpoint
 @app.get('/')
@@ -36,9 +36,9 @@ def handler(request: Request):
                 "agent": agent # display value 'agent' in response
             }
 
-@app.get('/data')
-def handler():
-    return data.to_dict(orient='records')
+# @app.get('/data')
+# def handler():
+#     return data.to_dict(orient='records')
 
 @app.get('/home/{user}')
 def handler(user):
